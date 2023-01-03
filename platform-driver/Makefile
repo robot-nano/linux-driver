@@ -1,8 +1,8 @@
-TARGET_MODULE:=char-device
+TARGET_MODULE:=platform-driver
 
 ifneq ($(KERNELRELEASE),)
-		$(TARGET_MODULE)-objs:=char_device.o
-		obj-m:=$(TARGET_MODULE).o
+	$(TARGET_MODULE)-objs:=platform_driver.o
+	obj-m:=$(TARGET_MODULE).o
 else
 	BUILDSYSTEM_DIR:=/lib/modules/$(shell uname -r)/build
 	PWD:=$(shell pwd)

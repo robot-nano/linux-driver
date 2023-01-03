@@ -1,5 +1,11 @@
-all: ioctl_test
-app: ioctl_test.c
-	$(CC) -o $@ $^
+target = test
+
+LDFLAGS += -lpthread
+
+all: $(target)
+
+test : test.o
+	$(CC) $^ -o $@ $(LDFLAGS)
+
 clean:
 	rm ioctl_test
